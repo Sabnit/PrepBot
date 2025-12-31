@@ -1,0 +1,33 @@
+# Core LangChain
+langchain
+langchain-community
+langchain-aws
+langchain-text-splitters
+langchain-core
+langchain-chroma
+
+# AWS Bedrock
+boto3
+botocore
+
+# Vector Store
+chromadb
+
+# Document Processing
+pypdf
+python-docx
+
+# Database
+sqlalchemy
+
+# Observability
+langsmith
+
+# Utilities
+python-dotenv
+pydantic
+pydantic-settings
+
+# CLI
+rich
+click

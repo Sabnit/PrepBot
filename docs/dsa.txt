@@ -1,0 +1,47 @@
+Introduction
+Data structures are ways of organizing and storing data for efficient access and modification. Algorithms are step-by-step procedures for solving problems or performing tasks.
+
+Time and Space Complexity
+
+Big O Notation:
+Mathematical notation describing algorithm performance as input size grows.
+
+Common complexities (fastest to slowest):
+- O(1): Constant - Same time regardless of input size
+- O(log n): Logarithmic - Halves search space each step
+- O(n): Linear - Time grows linearly with input
+- O(n log n): Linearithmic - Efficient sorting algorithms
+- O(n²): Quadratic - Nested loops over input
+- O(2^n): Exponential - Recursive algorithms solving subproblems
+- O(n!): Factorial - Generating all permutations
+
+Space complexity measures memory usage, using the same Big O notation.
+
+Arrays and Lists
+
+Arrays:
+Fixed-size, contiguous memory locations storing elements of same type.
+
+Operations:
+- Access by index: O(1)
+- Search: O(n)
+- Insert at end: O(1) if space available
+- Insert at beginning/middle: O(n) - requires shifting
+- Delete: O(n) - requires shifting
+
+Advantages:
+- Fast random access
+- Cache-friendly due to contiguous memory
+- Simple to use
+
+Disadvantages:
+- Fixed size (in traditional arrays)
+- Expensive insertions/deletions
+
+Dynamic Arrays (e.g., Python lists, Java ArrayList):
+Automatically resize when capacity exceeded.
+
+Resizing strategy: When full, allocate array twice the size, copy elements.
+- Amortized O(1) for append operations
+- Occasional O(n) when resizing occurs
+

@@ -1,0 +1,206 @@
+Introduction to Databases
+A database is an organized collection of structured data stored electronically. Database Management Systems (DBMS) are software applications that interact with users, applications, and the database itself to capture and analyze data.
+
+Relational Databases
+
+Relational databases organize data into tables (relations) with rows and columns. Each table represents an entity, and relationships between tables are established through keys.
+
+Key Components:
+
+1. Tables (Relations)
+Tables store data in a structured format with rows and columns. Each table should represent a single entity type.
+
+2. Rows (Tuples/Records)
+Each row represents a single instance of the entity. For example, in a Students table, each row represents one student.
+
+3. Columns (Attributes/Fields)
+Columns define the properties of the entity. Each column has a specific data type (integer, varchar, date, etc.).
+
+4. Primary Key
+A column or set of columns that uniquely identifies each row in a table. Primary keys must be unique and cannot contain NULL values.
+
+Properties:
+- Uniqueness: No two rows can have the same primary key
+- Non-null: Primary key cannot be NULL
+- Immutability: Should not change over time
+
+5. Foreign Key
+A column that creates a relationship between two tables by referencing the primary key of another table.
+
+Purpose:
+- Enforce referential integrity
+- Establish relationships between tables
+- Enable joins between related data
+
+SQL (Structured Query Language)
+
+SQL is the standard language for interacting with relational databases.
+
+Data Definition Language (DDL):
+Commands that define database structure:
+- CREATE: Create new tables or databases
+- ALTER: Modify existing table structure
+- DROP: Delete tables or databases
+- TRUNCATE: Remove all records from table
+
+Data Manipulation Language (DML):
+Commands for managing data within tables:
+- SELECT: Retrieve data from database
+- INSERT: Add new records
+- UPDATE: Modify existing records
+- DELETE: Remove records
+
+Basic SELECT Query Structure:
+SELECT column1, column2
+FROM table_name
+WHERE condition
+GROUP BY column
+HAVING group_condition
+ORDER BY column ASC/DESC
+LIMIT number;
+
+Common SQL Operations:
+
+Filtering:
+- WHERE clause: Filter rows based on conditions
+- Operators: =, !=, <, >, <=, >=, LIKE, IN, BETWEEN
+- Logical operators: AND, OR, NOT
+
+Joining Tables:
+- INNER JOIN: Returns matching rows from both tables
+- LEFT JOIN: Returns all rows from left table, matching from right
+- RIGHT JOIN: Returns all rows from right table, matching from left
+- FULL OUTER JOIN: Returns all rows when there's a match in either table
+- CROSS JOIN: Cartesian product of both tables
+
+Aggregation:
+- COUNT(): Count number of rows
+- SUM(): Sum of numeric values
+- AVG(): Average of numeric values
+- MIN(): Minimum value
+- MAX(): Maximum value
+- GROUP BY: Group rows sharing a property
+
+Database Normalization
+
+Normalization is the process of organizing data to reduce redundancy and improve data integrity.
+
+Normal Forms:
+
+First Normal Form (1NF):
+- Each cell contains atomic (indivisible) values
+- Each column contains values of a single type
+- Each row is unique
+
+Second Normal Form (2NF):
+- Must be in 1NF
+- All non-key columns are fully dependent on the primary key
+- Eliminates partial dependencies
+
+Third Normal Form (3NF):
+- Must be in 2NF
+- No transitive dependencies (non-key columns don't depend on other non-key columns)
+- All columns depend only on the primary key
+
+Benefits of normalization:
+- Reduces data redundancy
+- Improves data consistency
+- Easier to maintain and update
+- Better query performance in many cases
+
+Indexes
+
+Indexes are data structures that improve the speed of data retrieval operations on database tables.
+
+Types:
+1. Primary Index: Automatically created on primary key
+2. Unique Index: Ensures column values are unique
+3. Composite Index: Index on multiple columns
+4. Clustered Index: Determines physical order of data
+5. Non-Clustered Index: Logical order separate from physical
+
+Trade-offs:
+Advantages:
+- Faster SELECT queries
+- Efficient sorting and filtering
+- Quick joins
+
+Disadvantages:
+- Slower INSERT, UPDATE, DELETE operations
+- Requires additional storage space
+- Must be maintained as data changes
+
+Transactions and ACID Properties
+
+A transaction is a sequence of database operations that should be treated as a single unit of work.
+
+ACID Properties:
+
+Atomicity:
+All operations in a transaction complete successfully, or none do. If any operation fails, the entire transaction is rolled back.
+
+Consistency:
+Transactions bring the database from one valid state to another, maintaining all defined rules and constraints.
+
+Isolation:
+Concurrent transactions don't interfere with each other. Each transaction sees a consistent snapshot of the database.
+
+Durability:
+Once a transaction is committed, its changes are permanent, even in case of system failure.
+
+Transaction Control Commands:
+- BEGIN/START TRANSACTION: Start new transaction
+- COMMIT: Save all changes permanently
+- ROLLBACK: Undo all changes in current transaction
+- SAVEPOINT: Create a point within transaction to rollback to
+
+NoSQL Databases
+
+NoSQL databases provide flexible schemas and horizontal scaling for handling large volumes of unstructured or semi-structured data.
+
+Types:
+
+1. Document Databases (MongoDB, CouchDB)
+Store data as documents (JSON, BSON, XML). Each document is self-contained and can have different structures.
+
+Use cases:
+- Content management systems
+- User profiles
+- Product catalogs
+
+2. Key-Value Stores (Redis, DynamoDB)
+Simple data model storing values with unique keys. Fast and scalable for simple queries.
+
+Use cases:
+- Session management
+- Caching
+- Real-time recommendations
+
+3. Column-Family Databases (Cassandra, HBase)
+Store data in column families rather than rows. Optimized for queries accessing specific columns.
+
+Use cases:
+- Time-series data
+- IoT sensor data
+- Large-scale analytics
+
+4. Graph Databases (Neo4j, ArangoDB)
+Store data as nodes and relationships, optimized for querying connected data.
+
+Use cases:
+- Social networks
+- Recommendation engines
+- Fraud detection
+
+Database Design Best Practices
+
+1. Understand requirements before designing
+2. Choose appropriate data types for columns
+3. Use meaningful names for tables and columns
+4. Establish proper relationships with foreign keys
+5. Normalize to reduce redundancy (but denormalize when needed for performance)
+6. Create indexes on frequently queried columns
+7. Document database schema and relationships
+8. Plan for scalability and growth
+9. Implement proper security and access controls
+10. Regular backups and disaster recovery planning

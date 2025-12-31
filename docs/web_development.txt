@@ -1,0 +1,295 @@
+Introduction to Web Development
+Web development involves creating websites and web applications that run in web browsers. It encompasses front-end (client-side), back-end (server-side), and full-stack development.
+
+HTML (HyperText Markup Language)
+
+HTML is the standard markup language for creating web pages. It defines the structure and content of web pages using elements represented by tags.
+
+Basic Structure:
+- <!DOCTYPE html>: Declares document type
+- <html>: Root element
+- <head>: Contains metadata, title, links to CSS/JS
+- <body>: Contains visible page content
+
+Common HTML Elements:
+
+Structural Elements:
+- <header>: Page or section header
+- <nav>: Navigation links
+- <main>: Main content area
+- <article>: Self-contained content
+- <section>: Thematic grouping of content
+- <aside>: Sidebar content
+- <footer>: Page or section footer
+
+Content Elements:
+- <h1> to <h6>: Headings (h1 most important)
+- <p>: Paragraphs
+- <a>: Links (href attribute specifies URL)
+- <img>: Images (src attribute specifies source)
+- <ul>, <ol>, <li>: Unordered and ordered lists
+- <div>: Generic container for flow content
+- <span>: Generic inline container
+
+Forms:
+- <form>: Container for form elements
+- <input>: Various input types (text, email, password, checkbox, radio)
+- <textarea>: Multi-line text input
+- <select>, <option>: Dropdown selections
+- <button>: Clickable buttons
+- <label>: Labels for form controls
+
+HTML attributes provide additional information about elements:
+- id: Unique identifier
+- class: CSS styling class
+- style: Inline CSS
+- href: Link destination
+- src: Source file
+- alt: Alternative text for images
+
+CSS (Cascading Style Sheets)
+
+CSS controls the visual presentation of HTML elements, including layout, colors, fonts, and responsive design.
+
+CSS Syntax:
+selector {
+    property: value;
+}
+
+Selectors:
+- Element: p { }  # Targets all <p> elements
+- Class: .classname { }  # Targets elements with class
+- ID: #idname { }  # Targets element with specific ID
+- Descendant: div p { }  # <p> inside <div>
+- Child: div > p { }  # Direct child only
+- Attribute: [type="text"] { }  # Elements with attribute
+- Pseudo-class: a:hover { }  # Element state
+
+Box Model:
+Every HTML element is a rectangular box with:
+1. Content: The actual content
+2. Padding: Space around content, inside border
+3. Border: Line around padding
+4. Margin: Space outside border, between elements
+
+Layout Techniques:
+
+1. Display Property:
+- block: Takes full width, starts new line
+- inline: Only takes necessary width, no line break
+- inline-block: Inline but can have width/height
+- none: Removes element from layout
+
+2. Positioning:
+- static: Default, normal document flow
+- relative: Positioned relative to normal position
+- absolute: Positioned relative to nearest positioned ancestor
+- fixed: Positioned relative to viewport
+- sticky: Switches between relative and fixed
+
+3. Flexbox:
+One-dimensional layout method for arranging items in rows or columns.
+- display: flex on container
+- flex-direction: row or column
+- justify-content: Align along main axis
+- align-items: Align along cross axis
+- flex-wrap: Allow items to wrap
+
+4. Grid:
+Two-dimensional layout system for complex layouts.
+- display: grid on container
+- grid-template-columns: Define column structure
+- grid-template-rows: Define row structure
+- gap: Space between grid items
+- grid-column, grid-row: Place items
+
+Responsive Design:
+Creating websites that work well on all device sizes.
+
+Techniques:
+- Media Queries: Apply styles based on device characteristics
+- Flexible Grids: Use percentages instead of fixed widths
+- Flexible Images: Max-width: 100% to scale with container
+- Viewport Meta Tag: Control viewport scaling
+- Mobile-First Approach: Design for mobile, then enhance for larger screens
+
+JavaScript
+
+JavaScript is a programming language that adds interactivity and dynamic behavior to web pages.
+
+Variables and Data Types:
+- let: Block-scoped variable (can be reassigned)
+- const: Block-scoped constant (cannot be reassigned)
+- var: Function-scoped variable (legacy, avoid)
+
+Data types:
+- Primitives: string, number, boolean, null, undefined, symbol
+- Objects: Collections of key-value pairs
+- Arrays: Ordered collections
+
+DOM (Document Object Model):
+The DOM represents the HTML document as a tree structure that JavaScript can manipulate.
+
+Common DOM Operations:
+- document.getElementById(): Get element by ID
+- document.querySelector(): Get first element matching CSS selector
+- document.querySelectorAll(): Get all elements matching selector
+- element.textContent: Get/set text content
+- element.innerHTML: Get/set HTML content
+- element.setAttribute(): Set attribute value
+- element.classList.add/remove/toggle(): Modify classes
+- element.addEventListener(): Attach event listeners
+
+Events:
+User interactions that JavaScript can respond to:
+- click: Mouse click
+- submit: Form submission
+- keydown/keyup: Keyboard input
+- load: Page finished loading
+- scroll: Page scrolling
+- mouseover/mouseout: Mouse entering/leaving element
+
+Event Handling:
+element.addEventListener('click', function(event) {
+    // Handle the event
+    event.preventDefault(); // Prevent default behavior
+});
+
+Asynchronous JavaScript:
+
+1. Callbacks:
+Functions passed as arguments to be called later:
+function fetchData(callback) {
+    // Async operation
+    callback(data);
+}
+
+2. Promises:
+Objects representing eventual completion or failure of async operation:
+fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error));
+
+3. Async/Await:
+Syntactic sugar over promises for cleaner async code:
+async function fetchData() {
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+HTTP and APIs
+
+HTTP (HyperText Transfer Protocol) is the protocol for transferring data on the web.
+
+HTTP Methods:
+- GET: Retrieve data (should not modify)
+- POST: Submit data, create resources
+- PUT: Update/replace resources
+- PATCH: Partially update resources
+- DELETE: Remove resources
+
+Status Codes:
+- 2xx: Success (200 OK, 201 Created)
+- 3xx: Redirection (301 Moved Permanently)
+- 4xx: Client errors (404 Not Found, 401 Unauthorized)
+- 5xx: Server errors (500 Internal Server Error)
+
+RESTful APIs:
+Architectural style for designing networked applications using HTTP.
+
+Principles:
+- Resources identified by URLs
+- Use standard HTTP methods
+- Stateless communication
+- Uniform interface
+- Responses often in JSON format
+
+Front-End Frameworks
+
+Modern frameworks simplify complex web application development:
+
+1. React:
+Component-based library for building user interfaces.
+- Virtual DOM for efficient updates
+- JSX syntax combining JavaScript and HTML
+- Component state and props
+- Hooks for functional components
+
+2. Vue.js:
+Progressive framework for building user interfaces.
+- Reactive data binding
+- Component-based architecture
+- Easy integration with existing projects
+- Simple learning curve
+
+3. Angular:
+Full-featured framework for building web applications.
+- TypeScript-based
+- Two-way data binding
+- Dependency injection
+- Comprehensive CLI tools
+
+Web Performance Optimization
+
+Techniques to improve website speed and user experience:
+
+1. Minimize HTTP Requests:
+- Combine files
+- Use CSS sprites
+- Inline small resources
+
+2. Optimize Images:
+- Compress images
+- Use appropriate formats (WebP, JPEG, PNG)
+- Lazy loading for off-screen images
+- Responsive images with srcset
+
+3. Minify and Bundle:
+- Remove whitespace and comments from code
+- Bundle multiple files into one
+- Use code splitting for large applications
+
+4. Caching:
+- Browser caching with appropriate headers
+- Service workers for offline functionality
+- CDN (Content Delivery Network) for static assets
+
+5. Code Optimization:
+- Remove unused CSS and JavaScript
+- Defer non-critical JavaScript
+- Use async/defer attributes for scripts
+- Optimize critical rendering path
+
+Web Security Basics
+
+Common vulnerabilities and protection:
+
+1. Cross-Site Scripting (XSS):
+Injecting malicious scripts into web pages.
+Prevention: Sanitize user input, use Content Security Policy
+
+2. SQL Injection:
+Injecting malicious SQL through user input.
+Prevention: Use parameterized queries, input validation
+
+3. Cross-Site Request Forgery (CSRF):
+Unauthorized commands from authenticated users.
+Prevention: CSRF tokens, SameSite cookies
+
+4. HTTPS:
+Encrypted communication between browser and server.
+- SSL/TLS certificates
+- Protects data in transit
+- Required for modern web features
+
+5. Authentication and Authorization:
+- Strong password policies
+- Multi-factor authentication
+- Secure session management
+- JWT (JSON Web Tokens) for stateless auth
